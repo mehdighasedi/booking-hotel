@@ -1,11 +1,15 @@
 import { MdLocationOn } from "react-icons/md";
 import { HiCalendar, HiMinus, HiPlus, HiSearch } from "react-icons/hi";
 import { useState } from "react";
-import useTitle from "../../hooks/useTitle";
 import { useRef } from "react";
 import useOutsideClick from "../../hooks/useOutsideClick";
+import { DateRange } from "react-date-range";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { format } from "date-fns";
+import { createSearchParams, useNavigate } from "react-router-dom";
+
 function Header() {
-  useTitle("Home Page");
   const opt = {
     adult: 1,
     children: 0,
@@ -14,6 +18,15 @@ function Header() {
   const [destination, setDestination] = useState("");
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState(opt);
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
+  const [openDate, setOpenDate] = useState(false);
+  const navigate = useNavigate();
 
   const handleOptions = (name, operation) => {
     setOptions((prevValue) => {
@@ -24,50 +37,79 @@ function Header() {
     });
   };
 
+  const handleSearch = () => {
+    const encodedParams = createSearchParams({
+      date: JSON.stringify(date),
+      destination,
+      options: JSON.stringify(options),
+    });
+
+    navigate({
+      pathname: "/hotels",
+      search: encodedParams.toString(),
+    });
+  };
+
   return (
-    <div>
-      <div className="headers">
-        <div className="headerSearch">
-          <div className="headerSearchItem">
-            <MdLocationOn className="headerIcon locationIcon" />
-            <input
-              className="headerSearchInput"
-              type="text"
-              name="destination"
-              id="destination"
-              placeholder="Where Wanna Go ?"
-              value={destination}
-              onChange={(e) => setDestination(e.target.value)}
+    <div className="header">
+      <div className="headerSearch">
+        <div className="headerSearchItem">
+          <MdLocationOn className="headerIcon locationIcon" />
+          <input
+            className="headerSearchInput"
+            type="text"
+            name="destination"
+            id="destination"
+            placeholder="Where Wanna Go ?"
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
+          />
+          <span className="seperator"></span>
+        </div>
+        <div className="headerSearchItem">
+          <HiCalendar className="headerIcon dateIcon" />
+          <div
+            onClick={() => setOpenDate((is) => !is)}
+            className="dateDropDown"
+            id="dateDropDownMenu"
+          >
+            {`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+              date[0].endDate,
+              "MM/dd/yyyy"
+            )}`}
+          </div>
+          {openDate && (
+            <DateRange
+              onChange={(item) => setDate([item.selection])}
+              className="date"
+              ranges={date}
+              minDate={new Date()}
+              moveRangeOnFirstSelection={true}
             />
-            <span className="seperator"></span>
+          )}
+          <span className="seperator"></span>
+        </div>
+        <div className="headerSearchItem">
+          <div
+            id="optionDropDown"
+            onClick={() => setOpenOptions((open) => !open)}
+          >
+            {options.adult} adult &bull; {options.children} children &bull;
+            {options.room} room
           </div>
-          <div className="headerSearchItem">
-            <HiCalendar className="headerIcon dateIcon" />
-            <div className="dateDropDown">2023/01/30</div>
-            <span className="seperator"></span>
-          </div>
-          <div className="headerSearchItem">
-            <div
-              id="optionDropDown"
-              onClick={() => setOpenOptions((open) => !open)}
-            >
-              {options.adult} adult &bull; {options.children} children &bull;
-              {options.room} room
-            </div>
-            {openOptions && (
-              <GuestOpenList
-                options={options}
-                handleOptions={handleOptions}
-                setOpenOptions={setOpenOptions}
-              />
-            )}
-            <span className="seperator"></span>
-          </div>
-          <div className="headerSearchItem">
-            <button className="headerSearchBtn">
-              <HiSearch className="headerIcon" />
-            </button>
-          </div>
+          {openOptions && (
+            <GuestOpenList
+              options={options}
+              handleOptions={handleOptions}
+              setOpenOptions={setOpenOptions}
+            />
+          )}
+          <span className="seperator"></span>
+        </div>
+        <div className="headerSearchItem">
+          <button onClick={handleSearch} className="headerSearchBtn">
+            <HiSearch className="headerIcon" />
+          </button>
         </div>
       </div>
     </div>
