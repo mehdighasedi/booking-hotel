@@ -148,7 +148,7 @@
   color: var(--text-400);
 }
 .locationItem .locationItemDesc .location {
-  font-weight: 500;
+  font-weight: 600;
 }
 .locationItem .locationItemDesc .price {
   font-weight: 500;
@@ -232,7 +232,7 @@
   color: var(--text-400);
 }
 .searchItem .searchItemDesc .location {
-  font-weight: 500;
+  font-weight: 700;
 }
 .searchItem .searchItemDesc .price {
   font-weight: 500;
