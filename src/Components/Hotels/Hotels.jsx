@@ -3,7 +3,7 @@ import Loader from "../Loader/Loader";
 import { useHotels } from "../../Context/HotelsProvider";
 
 function Hotels() {
-  const { isLoading, hotels } = useHotels();
+  const { isLoading, hotels, currentHotel } = useHotels();
   if (isLoading) return <Loader />;
   return (
     <div className="searchList">
@@ -22,6 +22,15 @@ function Hotels() {
                 <p className="price">
                   €&nbsp;{item.price}&nbsp;
                   <span>Night</span>
+                </p>
+                <p className="select">
+                  <span
+                    className={`preSelected ${
+                      item.id === currentHotel?.id ? "activate" : ""
+                    }`}
+                  >
+                    Previously Selected
+                  </span>
                 </p>
               </div>
             </div>

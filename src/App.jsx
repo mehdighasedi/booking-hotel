@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import AppLayout from "./Components/AppLayout/AppLayout";
 import Hotels from "./Components/Hotels/Hotels";
 import HotelsProvider from "./Context/HotelsProvider";
+import SingleHotel from "./Components/SingleHotel/SingleHotel";
 
 function App() {
   useTitle("Home Page");
@@ -18,7 +19,7 @@ function App() {
         <Route path="/" element={<LocationList />} />
         <Route path="/hotels" element={<AppLayout />}>
           <Route index element={<Hotels />} />
-          <Route path=":id" element={<div>Single Hotels</div>} />
+          <Route path=":id" element={<SingleHotel />} />
         </Route>
       </Routes>
     </HotelsProvider>

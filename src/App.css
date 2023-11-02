@@ -169,14 +169,25 @@
   gap: 1rem;
   max-width: 1280px;
   margin: 2rem auto;
+  text-align: center;
 }
 
 .roomDetail h2 {
   margin-bottom: 0.3rem;
   font-size: 1rem;
+  background-color: rgba(200, 0, 10, .7);
+  padding: 1rem ;
+  border-radius: 1rem;
+  color:rgba(240, 240, 240, 0.938) ;
+  
 }
 .roomDetail > div {
   margin-bottom: 1rem;
+  background-color: rgba(21, 145, 247,.5);
+  padding: .8rem;
+  border-radius: 1.1rem;
+  font-weight: 500;
+  color: darkblue;
 }
 .roomDetail img {
   width: 100%;
@@ -184,7 +195,21 @@
   object-fit: cover;
   border-radius: 0.8rem;
 }
-
+.preSelected {
+  background-color: green;
+  opacity: .8;
+  padding: .5rem;
+  border-radius: 1rem;
+  color:rgba(255 ,255, 255, .9);
+  font-size: .8rem;
+  display: none;
+}
+.select.activate{
+  margin-top: 1rem;
+}
+.preSelected.activate { 
+  display: inline-block;
+}
 /* map */
 
 .mapContainer {
