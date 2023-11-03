@@ -8,21 +8,31 @@ import AppLayout from "./Components/AppLayout/AppLayout";
 import Hotels from "./Components/Hotels/Hotels";
 import HotelsProvider from "./Context/HotelsProvider";
 import SingleHotel from "./Components/SingleHotel/SingleHotel";
+import BookMarkLayout from "./Components/BookMarkLayout/BookMarkLayout";
+import BookMark from "./Components/BookMark/BookMark";
+import BookMarkListProvider from "./Context/BookMarksListProvider";
 
 function App() {
   useTitle("Home Page");
   return (
-    <HotelsProvider>
-      <Toaster />
-      <Header />
-      <Routes>
-        <Route path="/" element={<LocationList />} />
-        <Route path="/hotels" element={<AppLayout />}>
-          <Route index element={<Hotels />} />
-          <Route path=":id" element={<SingleHotel />} />
-        </Route>
-      </Routes>
-    </HotelsProvider>
+    <BookMarkListProvider>
+      <HotelsProvider>
+        <Toaster />
+        <Header />
+        <Routes>
+          <Route path="/" element={<LocationList />} />
+          <Route path="/hotels" element={<AppLayout />}>
+            <Route index element={<Hotels />} />
+            <Route path=":id" element={<SingleHotel />} />
+          </Route>
+          <Route path="/bookmark" element={<BookMarkLayout />}>
+            <Route index element={<BookMark />} />
+            <Route path=":id" element={<div>Single BookMark</div>} />
+            <Route path="add" element={<div>add a bookmark</div>} />
+          </Route>
+        </Routes>
+      </HotelsProvider>
+    </BookMarkListProvider>
   );
 }
 
