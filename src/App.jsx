@@ -11,6 +11,7 @@ import SingleHotel from "./Components/SingleHotel/SingleHotel";
 import BookMarkLayout from "./Components/BookMarkLayout/BookMarkLayout";
 import BookMark from "./Components/BookMark/BookMark";
 import BookMarkListProvider from "./Context/BookMarksListProvider";
+import SingleBookMark from "./Components/SingleBookMark/SingleBookMark";
 
 function App() {
   useTitle("Home Page");
@@ -27,7 +28,7 @@ function App() {
           </Route>
           <Route path="/bookmark" element={<BookMarkLayout />}>
             <Route index element={<BookMark />} />
-            <Route path=":id" element={<div>Single BookMark</div>} />
+            <Route path=":id" element={<SingleBookMark />} />
             <Route path="add" element={<div>add a bookmark</div>} />
           </Route>
         </Routes>

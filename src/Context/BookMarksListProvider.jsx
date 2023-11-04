@@ -15,7 +15,7 @@ function BookMarkListProvider({ children }) {
   async function getBookMark(id) {
     setIsLoadingCurrBookMarks(true);
     try {
-      const { data } = await axios.get(`${BASE_URL}/${id}`);
+      const { data } = await axios.get(`${BASE_URL}/bookmarks/${id}`);
       setCurrentBookMarks(data);
       setIsLoadingCurrBookMarks(false);
     } catch (error) {

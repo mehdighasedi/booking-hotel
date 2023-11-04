@@ -1331,6 +1331,22 @@
       "latitude": "23.18455079512732",
       "longitude": "3.795523257510883",
       "host_location": "Abalessa Algeria",
+      "picture_url": {
+        "thumbnail": true,
+        "filename": "415cd752_original.jpg",
+        "format": "JPEG",
+        "width": 480,
+        "mimetype": "image/jpeg",
+        "id": "1333549eac1ff1f91b4443e0dc910c3a",
+        "last_synchronized": "2020-08-01T01:19:25.582402",
+        "color_summary": [
+          "rgba(101, 94, 87, 1.00)",
+          "rgba(88, 86, 76, 1.00)",
+          "rgba(54, 54, 64, 1.00)"
+        ],
+        "height": 480,
+        "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/1333549eac1ff1f91b4443e0dc910c3a"
+      },
       "id": 1
     },
     {
@@ -1340,6 +1356,22 @@
       "latitude": "34.32869425037187",
       "longitude": "46.724183117022086",
       "host_location": "Mahidasht Iran (Islamic Republic of)",
+      "picture_url": {
+        "thumbnail": true,
+        "filename": "415cd752_original.jpg",
+        "format": "JPEG",
+        "width": 480,
+        "mimetype": "image/jpeg",
+        "id": "1333549eac1ff1f91b4443e0dc910c3a",
+        "last_synchronized": "2020-08-01T01:19:25.582402",
+        "color_summary": [
+          "rgba(101, 94, 87, 1.00)",
+          "rgba(88, 86, 76, 1.00)",
+          "rgba(54, 54, 64, 1.00)"
+        ],
+        "height": 480,
+        "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/1333549eac1ff1f91b4443e0dc910c3a"
+      },
       "id": 4
     },
     {
@@ -1349,6 +1381,22 @@
       "latitude": "35.31372444726279",
       "longitude": "47.03114358752335",
       "host_location": "Sanandaj Iran (Islamic Republic of)",
+      "picture_url": {
+        "thumbnail": true,
+        "filename": "415cd752_original.jpg",
+        "format": "JPEG",
+        "width": 480,
+        "mimetype": "image/jpeg",
+        "id": "1333549eac1ff1f91b4443e0dc910c3a",
+        "last_synchronized": "2020-08-01T01:19:25.582402",
+        "color_summary": [
+          "rgba(101, 94, 87, 1.00)",
+          "rgba(88, 86, 76, 1.00)",
+          "rgba(54, 54, 64, 1.00)"
+        ],
+        "height": 480,
+        "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/1333549eac1ff1f91b4443e0dc910c3a"
+      },
       "id": 5
     },
     {
@@ -1358,6 +1406,22 @@
       "latitude": "25.02090651422749",
       "longitude": "29.09059588509316",
       "host_location": "A Dakhla Oasis Egypt",
+      "picture_url": {
+        "thumbnail": true,
+        "filename": "415cd752_original.jpg",
+        "format": "JPEG",
+        "width": 480,
+        "mimetype": "image/jpeg",
+        "id": "1333549eac1ff1f91b4443e0dc910c3a",
+        "last_synchronized": "2020-08-01T01:19:25.582402",
+        "color_summary": [
+          "rgba(101, 94, 87, 1.00)",
+          "rgba(88, 86, 76, 1.00)",
+          "rgba(54, 54, 64, 1.00)"
+        ],
+        "height": 480,
+        "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/1333549eac1ff1f91b4443e0dc910c3a"
+      },
       "id": 7
     },
     {
@@ -1367,6 +1431,22 @@
       "latitude": "28.43528783183169",
       "longitude": "67.78003711374224",
       "host_location": "Baba Kot Pakistan",
+      "picture_url": {
+        "thumbnail": true,
+        "filename": "415cd752_original.jpg",
+        "format": "JPEG",
+        "width": 480,
+        "mimetype": "image/jpeg",
+        "id": "1333549eac1ff1f91b4443e0dc910c3a",
+        "last_synchronized": "2020-08-01T01:19:25.582402",
+        "color_summary": [
+          "rgba(101, 94, 87, 1.00)",
+          "rgba(88, 86, 76, 1.00)",
+          "rgba(54, 54, 64, 1.00)"
+        ],
+        "height": 480,
+        "url": "https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/airbnb-listings/files/1333549eac1ff1f91b4443e0dc910c3a"
+      },
       "id": 8
     }
   ]

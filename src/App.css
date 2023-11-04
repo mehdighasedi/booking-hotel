@@ -310,6 +310,31 @@
   align-items: center;
   justify-content: space-between;
 }
+.bookmarkItems {
+  margin-bottom: 1rem;
+  border: 1px solid var(--text-400);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--primary-600);
+  background-color: var(--text-100); ;
+}
+.bookmarkItems p {
+  margin-bottom: 20px;
+}
+.bookmarkItems  h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.pic {
+  width: 200px;
+  border-radius: 1rem;
+}
 
 .bookmarkList .bookmarkItem.current-bookmark {
   border: 2px solid var(--primary-600);
