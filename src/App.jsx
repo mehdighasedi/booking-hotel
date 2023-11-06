@@ -12,6 +12,7 @@ import BookMarkLayout from "./Components/BookMarkLayout/BookMarkLayout";
 import BookMark from "./Components/BookMark/BookMark";
 import BookMarkListProvider from "./Context/BookMarksListProvider";
 import SingleBookMark from "./Components/SingleBookMark/SingleBookMark";
+import AddNewBookMark from "./Components/AddNewBookMark/AddNewBookMark";
 
 function App() {
   useTitle("Home Page");
@@ -29,7 +30,7 @@ function App() {
           <Route path="/bookmark" element={<BookMarkLayout />}>
             <Route index element={<BookMark />} />
             <Route path=":id" element={<SingleBookMark />} />
-            <Route path="add" element={<div>add a bookmark</div>} />
+            <Route path="add" element={<AddNewBookMark />} />
           </Route>
         </Routes>
       </HotelsProvider>
