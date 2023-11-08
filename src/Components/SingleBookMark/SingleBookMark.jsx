@@ -7,14 +7,13 @@ import ReactCountryFlag from "react-country-flag";
 function SingleBookMark() {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { getBookMark, currentBookMarks, isLoadingCurrBookMarks } =
-    useBookMark();
+  const { getBookMark, currentBookMarks, isLoading } = useBookMark();
 
   useEffect(() => {
     getBookMark(id);
   }, [id]);
 
-  if (isLoadingCurrBookMarks || !currentBookMarks) return <Loader />;
+  if (isLoading || !currentBookMarks) return <Loader />;
 
   return (
     <div>
@@ -27,11 +26,11 @@ function SingleBookMark() {
         <p>Lat : {currentBookMarks.latitude}</p>
         <p>Lng : {currentBookMarks.longitude}</p>
         <p>{currentBookMarks.host_location}</p>
-        <img
+        {/* <img
           src={currentBookMarks.picture_url.url}
           alt={currentBookMarks.name}
           className="pic"
-        />
+        /> */}
       </div>
       <button onClick={() => navigate(-1)} className="btn btn--back">
         &larr; Back

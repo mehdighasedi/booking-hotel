@@ -2,18 +2,20 @@ import { useEffect, useState } from "react";
 import useUrlPosition from "../../hooks/useUrlPosition";
 import axios from "axios";
 import Loader from "../Loader/Loader";
-import CatchError from "../CatchError/CatchError";
 import ReactCountryFlag from "react-country-flag";
+import { useBookMark } from "../../Context/BookMarksListProvider";
+import { useNavigate } from "react-router-dom";
 
 function AddNewBookMark() {
   const [lat, lng] = useUrlPosition();
   const [isLoadingGeoCoding, setIsLoadingGeoCoding] = useState(false);
   const [cityName, setCityName] = useState("");
-  const [countryName, setCountryName] = useState("");
+  const [country, setCountry] = useState("");
   const [continent, setContinent] = useState("");
   const [GeoCodingError, setGeoCodingError] = useState(null);
   const [countryCode, setCountryCode] = useState("");
-
+  const { createBookMark } = useBookMark();
+  const navigate = useNavigate();
   const BASE_GEOCODING_URL =
     "https://api.bigdatacloud.net/data/reverse-geocode-client";
 
@@ -39,9 +41,9 @@ function AddNewBookMark() {
           throw new Error(
             "This Location is Invalid , Please Select SomeWhere Else"
           );
-
+        console.log(data);
         setCityName(data.city || data.locality || "");
-        setCountryName(data.countryName);
+        setCountry(data.countryName);
         setContinent(data.continent);
         setCountryCode(data.countryCode);
         setIsLoadingGeoCoding(false);
@@ -54,13 +56,28 @@ function AddNewBookMark() {
     fetchLocationData();
   }, [lat, lng]);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newBookMark = {
+      cityName,
+      country,
+      countryCode,
+      continent,
+      latitude: lat,
+      longitude: lng,
+      host_location: cityName + "" + country,
+    };
+    navigate("/bookmark");
+    await createBookMark(newBookMark);
+  };
+
   if (isLoadingGeoCoding) return <Loader />;
   if (GeoCodingError) return <p className="err">{GeoCodingError}</p>;
 
   return (
     <div>
       <h2>Add A New BookMark</h2>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         &nbsp;
         <div className="formControl">
           <label htmlFor="">City Name:</label>
@@ -76,10 +93,10 @@ function AddNewBookMark() {
           <label htmlFor="">Country Name:</label>
           <input
             type="text"
-            name="countryName"
-            value={countryName}
-            id="countryName"
-            onChange={(e) => setCountryName(e.target.value)}
+            name="country"
+            value={country}
+            id="country"
+            onChange={(e) => setCountry(e.target.value)}
           />
           <ReactCountryFlag svg className="flag" countryCode={countryCode} />
           {/* <span className="flag">{countryCode}</span> */}
@@ -96,7 +113,9 @@ function AddNewBookMark() {
         </div>
         <div className="buttons">
           <button className="btn btn--back">&larr; Back</button>
-          <button className="btn btn--primary">Add</button>
+          <button className="btn btn--primary" type="submit">
+            Add
+          </button>
         </div>
       </form>
     </div>
