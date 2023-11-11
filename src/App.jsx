@@ -13,6 +13,7 @@ import BookMark from "./Components/BookMark/BookMark";
 import BookMarkListProvider from "./Context/BookMarksListProvider";
 import SingleBookMark from "./Components/SingleBookMark/SingleBookMark";
 import AddNewBookMark from "./Components/AddNewBookMark/AddNewBookMark";
+import Login from "./Components/Login/Login";
 
 function App() {
   useTitle("Home Page");
@@ -32,6 +33,7 @@ function App() {
             <Route path=":id" element={<SingleBookMark />} />
             <Route path="add" element={<AddNewBookMark />} />
           </Route>
+          <Route path="/login" element={<Login />} />
         </Routes>
       </HotelsProvider>
     </BookMarkListProvider>

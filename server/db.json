@@ -1323,5 +1323,26 @@
       ]
     }
   ],
-  "bookmarks": []
+  "bookmarks": [
+    {
+      "cityName": "Aachen",
+      "country": "Germany",
+      "countryCode": "DE",
+      "continent": "Europe",
+      "latitude": "50.75448631833607",
+      "longitude": "6.098570575028966",
+      "host_location": "AachenGermany",
+      "id": 1
+    },
+    {
+      "cityName": "Eindhoven",
+      "country": "Netherlands (the)",
+      "countryCode": "NL",
+      "continent": "Europe",
+      "latitude": "51.458071571114886",
+      "longitude": "5.496588537894694",
+      "host_location": "EindhovenNetherlands (the)",
+      "id": 2
+    }
+  ]
 }
