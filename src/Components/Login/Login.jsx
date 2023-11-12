@@ -1,12 +1,23 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../Context/AuthProvider";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("mahdi@gmail.com");
+  const [password, setPassword] = useState("123456mahdis");
+  const navigate = useNavigate();
+  const { login, isAuthenticated } = useAuth();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email && password) login(email, password);
+    if (isAuthenticated) navigate("/", { replace: true });
+  };
+
   return (
     <div className="loginContainer">
       <h2>Login</h2>
-      <form className="form">
+      <form onSubmit={handleSubmit} className="form">
         <div className="formControl">
           <label htmlFor="">Email</label>
           <input
@@ -21,14 +32,16 @@ function Login() {
           <label htmlFor="">Password</label>
           <input
             type="password"
-            name="email"
-            id="email"
+            name="password"
+            id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className="buttons">
-          <button className="btn btn--primary">Login</button>
+          <button type="submit" className="btn btn--primary">
+            Login
+          </button>
         </div>
       </form>
     </div>
