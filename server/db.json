@@ -1343,6 +1343,46 @@
       "longitude": "5.496588537894694",
       "host_location": "EindhovenNetherlands (the)",
       "id": 2
+    },
+    {
+      "cityName": "Rocquigny",
+      "country": "France",
+      "countryCode": "FR",
+      "continent": "Europe",
+      "latitude": "50.024526022481254",
+      "longitude": "3.969841003417969",
+      "host_location": "RocquignyFrance",
+      "id": 3
+    },
+    {
+      "cityName": "Eindhoven",
+      "country": "Netherlands (the)",
+      "countryCode": "NL",
+      "continent": "Europe",
+      "latitude": "51.45680808860107",
+      "longitude": "5.496425628662109",
+      "host_location": "EindhovenNetherlands (the)",
+      "id": 4
+    },
+    {
+      "cityName": "Rocquigny",
+      "country": "France",
+      "countryCode": "FR",
+      "continent": "Europe",
+      "latitude": "50.02254084235175",
+      "longitude": "3.980655670166016",
+      "host_location": "RocquignyFrance",
+      "id": 5
+    },
+    {
+      "cityName": "Wignehies",
+      "country": "France",
+      "countryCode": "FR",
+      "continent": "Europe",
+      "latitude": "50.0145993014181",
+      "longitude": "3.9911270141601567",
+      "host_location": "WignehiesFrance",
+      "id": 6
     }
   ]
 }

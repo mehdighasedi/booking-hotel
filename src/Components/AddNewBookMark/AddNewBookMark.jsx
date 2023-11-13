@@ -112,7 +112,16 @@ function AddNewBookMark() {
           />
         </div>
         <div className="buttons">
-          <button className="btn btn--back">&larr; Back</button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(-1);
+            }}
+            className="btn btn--back"
+          >
+            &larr; Back
+          </button>
+
           <button className="btn btn--primary" type="submit">
             Add
           </button>

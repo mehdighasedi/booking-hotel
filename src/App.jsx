@@ -15,6 +15,7 @@ import SingleBookMark from "./Components/SingleBookMark/SingleBookMark";
 import AddNewBookMark from "./Components/AddNewBookMark/AddNewBookMark";
 import Login from "./Components/Login/Login";
 import AuthProvider from "./Context/AuthProvider";
+import ProtectedRoutes from "./Components/ProtectedRoutes/ProtectedRoutes";
 
 function App() {
   useTitle("Home Page");
@@ -30,7 +31,14 @@ function App() {
               <Route index element={<Hotels />} />
               <Route path=":id" element={<SingleHotel />} />
             </Route>
-            <Route path="/bookmark" element={<BookMarkLayout />}>
+            <Route
+              path="/bookmark"
+              element={
+                <ProtectedRoutes>
+                  <BookMarkLayout />
+                </ProtectedRoutes>
+              }
+            >
               <Route index element={<BookMark />} />
               <Route path=":id" element={<SingleBookMark />} />
               <Route path="add" element={<AddNewBookMark />} />

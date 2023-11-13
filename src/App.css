@@ -436,3 +436,28 @@ a.active {
   padding: 1.3rem;
   text-align: center;
 }
+
+.username {
+  padding: 1rem;
+  background-color: var(--rose-500);
+  color: white;
+  border-radius: 1rem;
+}
+
+.handleUsername {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+}
+.logoutBtn {
+  padding: 1rem;
+  color: white;
+  background-color: blueviolet;
+  border-radius: 1rem;
+  transition: all ease 0.3s;
+}
+
+.logoutBtn:hover{
+  transform: translateX(.4rem);
+}

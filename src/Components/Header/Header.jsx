@@ -188,18 +188,21 @@ function OptionItem({ options, type, minLimit, handleOptions }) {
 function User() {
   const { isAuthenticated, user, logout } = useAuth();
   const handleLogout = (e) => {
+    e.preventDefault();
     logout();
   };
-  {
-    isAuthenticated ? (
-      <div>
-        <span>{user.name}</span>
-        <button onClick={handleLogout}>
-          <HiLogout className="icon" />
-        </button>
-      </div>
-    ) : (
-      <NavLink to="/login">Login</NavLink>
-    );
-  }
+  return (
+    <div>
+      {isAuthenticated ? (
+        <div className="handleUsername">
+          <span className="username">{user.name}</span>
+          <button className="logoutBtn" onClick={handleLogout}>
+            <HiLogout className="icon" />
+          </button>
+        </div>
+      ) : (
+        <NavLink to="/login">Login</NavLink>
+      )}
+    </div>
+  );
 }
